@@ -1,0 +1,98 @@
+{
+  "revision_id": "97f6ada6bb73444a6c6194d249f3963869b044f7ea9f908d601de7f569309e02",
+  "name": "salt-vulnerabilities",
+  "run_list": [
+    "recipe[salt::master]",
+    "recipe[salt::minion]"
+  ],
+  "included_policy_locks": [
+
+  ],
+  "cookbook_locks": {
+    "compat_resource": {
+      "version": "12.19.1",
+      "identifier": "e83881cec71c93482a721e30c09eaa1b057ddd8f",
+      "dotted_decimal_identifier": "65364324767964307.20312867944317086.187033032973711",
+      "cache_key": "compat_resource-12.19.1-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/compat_resource/versions/12.19.1/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/compat_resource/versions/12.19.1/download",
+        "version": "12.19.1"
+      }
+    },
+    "ohai": {
+      "version": "5.3.0",
+      "identifier": "3ad58179813321f2497a12ea4e2bbb6018a47ee3",
+      "dotted_decimal_identifier": "16560300715225889.68197733016161835.206021404688099",
+      "cache_key": "ohai-5.3.0-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/ohai/versions/5.3.0/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/ohai/versions/5.3.0/download",
+        "version": "5.3.0"
+      }
+    },
+    "salt": {
+      "version": "4.0.0",
+      "identifier": "20a1fff0d0fbc6c1163ef301f733bc8fcfb70157",
+      "dotted_decimal_identifier": "9185319883701190.54349130125932339.207325851222359",
+      "cache_key": "salt-4.0.0-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/salt/versions/4.0.0/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/salt/versions/4.0.0/download",
+        "version": "4.0.0"
+      }
+    }
+  },
+  "default_attributes": {
+    "salt": {
+      "master": {
+        "api": {
+          "config": {
+            "debug": false,
+            "interface": "0.0.0.0"
+          }
+        }
+      },
+      "minion": {
+        "master": "127.0.0.1"
+      }
+    }
+  },
+  "override_attributes": {
+
+  },
+  "solution_dependencies": {
+    "Policyfile": [
+      [
+        "compat_resource",
+        "= 12.19.1"
+      ],
+      [
+        "ohai",
+        "= 5.3.0"
+      ],
+      [
+        "salt",
+        "= 4.0.0"
+      ]
+    ],
+    "dependencies": {
+      "compat_resource (12.19.1)": [
+
+      ],
+      "ohai (5.3.0)": [
+
+      ],
+      "salt (4.0.0)": [
+        [
+          "compat_resource",
+          ">= 12.14.6"
+        ],
+        [
+          "ohai",
+          ">= 4.0.0"
+        ]
+      ]
+    }
+  }
+}
