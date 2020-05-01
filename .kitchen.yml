@@ -8,9 +8,7 @@ provisioner:
 verifier:
   name: inspec
   inspec_tests:
-    path: .
-    # - name: salt-vulnerabilities
-    #   url: https://github.com/chef-cft/salt-vulnerabilities
+    - path: .
 
 platforms:
 - name: centos-6
