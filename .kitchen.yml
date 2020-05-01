@@ -1,0 +1,31 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+
+verifier:
+  name: inspec
+  inspec_tests:
+    path: .
+    # - name: salt-vulnerabilities
+    #   url: https://github.com/chef-cft/salt-vulnerabilities
+
+platforms:
+- name: centos-6
+- name: centos-7
+- name: centos-8
+- name: ubuntu-16.04
+- name: oracle-7
+
+suites:
+  - name: latest
+  - name: vulnerable-2019
+    attributes:
+      salt:
+        version: '2019.2.3'
+  - name: vulnerable-3000
+    attributes:
+      salt:
+        version: '3000.1'
